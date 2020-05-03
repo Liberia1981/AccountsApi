@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config1" doc:name="HTTP Listener config" doc:id="554d6542-8351-496c-90b3-03a7ea874f2b" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<http:listener-config name="HTTP_Listener_config2" doc:name="HTTP Listener config" doc:id="78b2da73-a995-43a2-8f07-f9fbaef8cefb" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="c39443e7-3b73-42e8-a822-a34d051b8842" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="training-account-ws4diyFlow" doc:id="62c89c47-e1de-442a-b927-a445dc9e228e" >
+		<http:listener doc:name="Listener" doc:id="a4c98f61-a819-4f8b-85a3-9b1ca170119c" path="/flights" config-ref="HTTP_Listener_config"/>
+		<set-payload value="Flight info" doc:name="Set Payload" doc:id="e55273ae-8b4c-4bb9-9868-e229ace60755" />
+	</flow>
+</mule>
